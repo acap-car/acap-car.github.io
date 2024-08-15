@@ -1,0 +1,10 @@
+https://acap-car.github.io/
+https://acap-car.github.io/weather-services/
+https://acap-car.github.io/cropping-calendar-v2/
+https://acap-car.github.io/agroclimatic-services/
+https://acap-car.github.io/bulletins/
+https://acap-car.github.io/bulletins/weather/
+https://acap-car.github.io/bulletins/seasonal-outlook/
+https://acap-car.github.io/bulletins/special-weather-forecast/
+https://acap-car.github.io/admin/login/
+https://acap-car.github.io/superadmin/login/
