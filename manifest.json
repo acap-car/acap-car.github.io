@@ -5,7 +5,7 @@
     "id": "app.github.acap-car",
     "display": "standalone",
     "background_color": "#ffffff",
-    "orientation":"portrait-secondary",
+    "orientation":"any",
     "theme_color": "#000000",
     "description": "Agro-Climatic Advisory Portal of Cordillera Administrative Region, Climate Information System",
     "icons": [
