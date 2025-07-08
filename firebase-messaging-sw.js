@@ -7,19 +7,28 @@ firebase.initializeApp({
   projectId: "car-cis-prod",
   storageBucket: "car-cis-prod.appspot.com",
   messagingSenderId: "778431289077",
-  appId: "1:778431289077:web:79d36f4ff4eec32729d7bc", //web:79d36f4ff4eec32729d7bc  ??
+  appId: "1:778431289077:web:79d36f4ff4eec32729d7bc",
   measurementId: "G-VP9S1BY648"
 });
-
 
 const messaging = firebase.messaging();
 
 messaging.onBackgroundMessage(function(payload) {
+  // Use data payload for custom fields
+  const notification = payload.data || {};
   self.registration.showNotification(
-    payload.notification.title,
+    notification.title || 'News',
     {
-      body: payload.notification.body,
-      icon: './favicon_io/android-chrome-192x192.png'
+      body: notification.body || '',
+      icon: './favicon_io/android-chrome-192x192.png',
+      image: notification.imageUrl || '', 
+      data: { click_action: notification.click_action || '/' }
     }
   );
+});
+
+self.addEventListener('notificationclick', function(event) {
+  event.notification.close();
+  const url = event.notification.data?.click_action || '/';
+  event.waitUntil(clients.openWindow(url));
 });
