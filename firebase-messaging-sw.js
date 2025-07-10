@@ -14,17 +14,19 @@ firebase.initializeApp({
 const messaging = firebase.messaging();
 
 messaging.onBackgroundMessage(function(payload) {
-  // Use data payload for custom fields
-  const notification = payload.data || {};
-  self.registration.showNotification(
-    notification.title || 'News',
-    {
-      body: notification.body || '',
-      icon: './favicon_io/android-chrome-192x192.png',
-      image: notification.imageUrl || '', 
-      data: { click_action: notification.click_action || '/' }
-    }
-  );
+  // Only show notification if this is a data-only message (no notification property)
+  if (!payload.notification && payload.data) {
+    const notification = payload.data;
+    self.registration.showNotification(
+      notification.title || 'News',
+      {
+        body: notification.body || '',
+        icon: './favicon_io/android-chrome-192x192.png',
+        image: notification.imageUrl || '',
+        data: { click_action: notification.click_action || '/' }
+      }
+    );
+  }
 });
 
 self.addEventListener('notificationclick', function(event) {
