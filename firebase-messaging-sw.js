@@ -23,7 +23,7 @@ messaging.onBackgroundMessage(function(payload) {
         body: notification.body || '',
         icon: './favicon_io/android-chrome-192x192.png',
         image: notification.imageUrl || '',
-        data: { click_action: notification.click_action || '/' }
+        data: { click_action: notification.click_action || '/news/' }
       }
     );
   }
@@ -31,6 +31,6 @@ messaging.onBackgroundMessage(function(payload) {
 
 self.addEventListener('notificationclick', function(event) {
   event.notification.close();
-  const url = event.notification.data?.click_action || '/';
+  const url = event.notification.data?.click_action || '/news/';
   event.waitUntil(clients.openWindow(url));
 });
