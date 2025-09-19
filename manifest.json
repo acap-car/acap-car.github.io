@@ -1,7 +1,7 @@
 {
     "name": "Agro-Climatic Advisory Portal",
     "short_name": "ACAP-CAR",
-    "start_url": "",
+    "start_url": "https://acap-car.github.io/",
     "id": "app.github.acap-car",
     "display": "standalone",
     "background_color": "#ffffff",
