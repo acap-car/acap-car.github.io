@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[4440],{74440:function(n,e,t){function u(){return"https://amia-cis-v0es.onrender.com"}t.r(e),t.d(e,{default:function(){return u}})}}]);
